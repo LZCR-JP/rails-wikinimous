@@ -1,0 +1,15 @@
+<div class="container mt-4">
+  <h1 class="border-bottom pb-2 mb-4">Articles</h1>
+
+  <% @articles.each do |article| %>
+    <div class="card mb-3">
+      <div class="card-body">
+        <h5 class="card-title">
+          <%= link_to article.title, article_path(article), class: "text-dark" %>
+        </h5>
+        <p class="card-text"><%= truncate(article.content, length: 120) %></p>
+        <%= link_to "Read more", article_path(article), class: "btn btn-outline-primary btn-sm" %>
+      </div>
+    </div>
+  <% end %>
+</div>
